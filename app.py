@@ -709,8 +709,8 @@ def analyze_with_gemini(image):
             "gemini_result": full_text,
             "confidence": confidence,
             "is_likely_ai": is_ai,
-            "reasoning": full_text[:1500] + ("..." if len(full_text) > 3000 else ""),  # Increased from 500
-            "detected_issues": detected_issues[:10]  # Include up to 10 issues
+            "reasoning": full_text[:3000] + ("..." if len(full_text) > 3000 else ""),  # Increased from 500
+            "detected_issues": detected_issues[:5]  # Include up to 5 issues
         }
             
     except Exception as e:
