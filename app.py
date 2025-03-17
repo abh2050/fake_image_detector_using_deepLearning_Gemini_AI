@@ -8,14 +8,11 @@ from PIL import Image, ImageChops, ImageEnhance, ImageFile
 import piexif
 import matplotlib.pyplot as plt
 import os
-import tempfile
 import io
 import re
 import hashlib
-from pathlib import Path
 import time
 import warnings
-from typing import Tuple, List, Dict, Any, Optional
 import traceback
 import base64
 import google.generativeai as genai
