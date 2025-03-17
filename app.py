@@ -168,7 +168,7 @@ with st.sidebar:
         "AI Detection Confidence Threshold",
         min_value=0.5,
         max_value=0.95,
-        value=0.6,
+        value=0.8,
         step=0.05,
         help="Minimum confidence level to classify media as AI-generated"
     )
