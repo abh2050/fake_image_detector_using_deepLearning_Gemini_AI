@@ -602,7 +602,7 @@ def analyze_with_gemini(image):
         
         # Configure Gemini model with fallbacks
         try:
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-2.0-flash')
         except Exception as e:
             try:
                 model = genai.GenerativeModel('gemini-pro-vision')
@@ -709,7 +709,7 @@ def analyze_with_gemini(image):
             "gemini_result": full_text,
             "confidence": confidence,
             "is_likely_ai": is_ai,
-            "reasoning": full_text[:1500] + ("..." if len(full_text) > 1500 else ""),  # Increased from 500
+            "reasoning": full_text[:1500] + ("..." if len(full_text) > 3000 else ""),  # Increased from 500
             "detected_issues": detected_issues[:10]  # Include up to 10 issues
         }
             
