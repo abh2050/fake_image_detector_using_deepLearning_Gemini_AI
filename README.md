@@ -6,6 +6,12 @@
 
 The **AI Fake Image & Video Detector** is a powerful Streamlit-based application designed to identify whether images or videos are AI-generated or authentic. Utilizing advanced techniques, this tool helps detect synthetic media created by popular AI models such as DALL-E, Midjourney, Stable Diffusion, and others.
 
+## APP-1
+https://fakeimagedetectorgemini.streamlit.app/
+
+## App-2 (With React Components)
+https://v0-gemini-fake-image-detector.vercel.app/
+
 ## Features
 
 The application integrates multiple sophisticated analysis techniques to determine authenticity:
