@@ -17,6 +17,8 @@ import traceback
 import base64
 import google.generativeai as genai
 from dotenv import load_dotenv
+import warnings
+warnings.filterwarnings("ignore")  # This will ignore all warnings
 
 # Load environment variables from .env file
 load_dotenv()
