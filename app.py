@@ -1157,16 +1157,16 @@ if uploaded_file is not None:
             # Show media
             if not is_video:
                 # For images
-                st.image(results["image"], caption="Analyzed Image", use_column_width=True)
+                st.image(results["image"], caption="Analyzed Image", use_container_width=True)
             else:
                 # For videos, show one sample frame
-                st.image(results["frames"][0]["image"], caption="Sample Frame from Video", use_column_width=True)
+                st.image(results["frames"][0]["image"], caption="Sample Frame from Video", use_container_width=True)
                 # Option to view all analyzed frames
                 with st.expander("View All Analyzed Frames"):
                     frame_cols = st.columns(min(3, len(results["frames"])))
                     for i, frame_result in enumerate(results["frames"]):
                         with frame_cols[i % len(frame_cols)]:
-                            st.image(frame_result["image"], caption=f"Frame {i+1}", use_column_width=True)
+                            st.image(frame_result["image"], caption=f"Frame {i+1}", use_container_width=True)
                             st.text(f"Score: {frame_result['overall_score']:.2f}")
         
         with col2:
@@ -1232,7 +1232,7 @@ if uploaded_file is not None:
             with tabs[2]:
                 if results["ela"] and results["ela"]["ela_image"] is not None:
                     st.subheader("Error Level Analysis (ELA)")
-                    st.image(results["ela"]["ela_image"], caption="ELA Visualization", use_column_width=True)
+                    st.image(results["ela"]["ela_image"], caption="ELA Visualization", use_container_width=True)
                     st.markdown(f"Mean Error: **{results['ela']['mean']:.2f}**")
                     st.markdown(f"Standard Deviation: **{results['ela']['std']:.2f}**")
                     st.markdown("*AI-generated images often have uniform error levels*")
@@ -1267,7 +1267,7 @@ if uploaded_file is not None:
             with tabs[4]:
                 if results["noise"] and results["noise"]["noise_image"] is not None:
                     st.subheader("Noise Pattern Analysis")
-                    st.image(results["noise"]["noise_image"], caption="Noise Visualization", use_column_width=True)
+                    st.image(results["noise"]["noise_image"], caption="Noise Visualization", use_container_width=True)
                     st.markdown(f"Noise Uniformity: **{results['noise']['noise_uniformity']:.2f}**")
                     st.markdown("*AI-generated images often have unnatural noise patterns*")
                 else:
@@ -1277,7 +1277,7 @@ if uploaded_file is not None:
             with tabs[5]:
                 if results["compression"] and results["compression"]["compression_image"] is not None:
                     st.subheader("Compression Analysis")
-                    st.image(results["compression"]["compression_image"], caption="Compression Artifacts", use_column_width=True)
+                    st.image(results["compression"]["compression_image"], caption="Compression Artifacts", use_container_width=True)
                     st.markdown(f"Compression Uniformity: **{results['compression']['compression_uniformity']:.2f}**")
                     st.markdown("*AI-generated images often respond differently to compression*")
                 else:
@@ -1326,7 +1326,7 @@ if uploaded_file is not None:
             if selected_frame is not None:
                 st.subheader(f"Detailed Analysis for Frame {selected_frame + 1}")
                 frame_result = results["frames"][selected_frame]
-                st.image(frame_result["image"], caption=f"Frame {selected_frame + 1}", use_column_width=True)
+                st.image(frame_result["image"], caption=f"Frame {selected_frame + 1}", use_container_width=True)
                 st.markdown(f"AI Score: **{frame_result['overall_score']:.2f}**")
                 st.markdown(f"Verdict: **{frame_result['verdict']}**")
 
