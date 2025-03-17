@@ -1424,7 +1424,7 @@ else:
     with st.expander("View Examples"):
         col1, col2 = st.columns(2)
         with col1:
-            st.image("https://storage.googleapis.com/pai-images/1f5918df9f0843969615c0358789c23e.jpeg", caption="Example AI-Generated Image")
+            st.image("https://p.potaufeu.asahi.com/1831-p/picture/27695628/89644a996fdd0cfc9e06398c64320fbe.jpg", caption="Example AI-Generated Image")
         with col2:
             st.image("https://upload.wikimedia.org/wikipedia/commons/4/42/Shaqi_jrvej.jpg", caption="Example Real Image")
 
