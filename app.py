@@ -772,8 +772,6 @@ def extract_frames(video_path, num_frames=5):
     
     return frame_paths
 
-# Add this function before analyze_image
-
 def check_common_ai_artifacts(image):
     """Checks for specific visual artifacts common in AI-generated images"""
     try:
@@ -906,11 +904,6 @@ def analyze_image(image_path):
             results["gemini"] = gemini_results
             scores.append(gemini_results["confidence"])
             
-            if gemini_results["is_likely_ai"]:
-                results["detected_attributes"].append("Gemini AI detected signs of AI generation")
-                if gemini_results.get("detected_issues"):
-                    for issue in gemini_results["detected_issues"][:8]:  # Increased from 3 to 8
-                        results["detected_attributes"].append(f"• {issue}")
         
         # Calculate overall score and verdict
         if scores:
